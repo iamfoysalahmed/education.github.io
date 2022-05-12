@@ -1,0 +1,601 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+
+:root{
+    --light_blue: #607ee9;
+    --light_sky: #89d0ff;
+    --gradient: linear-gradient(90deg, var(--light_blue), var(--light_sky));
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+body{
+   background: #EBF3FF;
+}
+html{
+    font-size:62.3% ;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+section{
+    min-height: 100vh;
+    padding: 1rem 7%;
+    padding-top: 6rem;
+}
+.btn{
+    display: inline-block;
+    background: var(--gradient);
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    border-radius:5rem;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+    text-transform: capitalize;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+    transition: all 0.3s ease-in;
+}
+.btn:hover{
+    transform: scale(1.1);
+    transition: all 0.3s ease-out;
+}
+.heading{
+    text-align: center;
+    background: var(--gradient);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 3rem;
+    text-transform: uppercase;
+    padding: 1rem;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    justify-content:space-between;
+    align-items: center;
+    background: rgb(118, 184, 247);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.2);
+    padding: 2rem 8%;
+    z-index: 1000;
+}
+header .logo{
+    font-size:2.5rem;
+}
+header a{
+    color: #fff;
+}
+header .logo i,
+header div{
+    color: #164083;
+    cursor: pointer;
+}
+header #login:hover,
+header .logo i:hover{
+    color: #fff;
+}
+header .navbar a{
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    transition: all 0.3s ease;
+}
+header .navbar a:hover{
+    color: #164083;
+}
+
+.login-form{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: -120%;
+    left: 0;
+    z-index: 1001;
+    background: rgba(0,0,0,.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.form-control{
+    position: relative;
+}
+.form-control.success input{
+    border-bottom-color: #2ecc71;
+}
+.form-control.error input{
+    border-color: #e74c3c;
+}
+.form-control small{
+    visibility: hidden;
+    position: absolute;
+    bottom: -10%;
+    left: 0;
+    font-size: 1rem;
+}
+.form-control.error small{
+    visibility: visible;
+    color: #e74c3c;
+}
+
+.login-form.popup{
+    top: 0;
+}
+
+.login-form form{
+    width: 35rem;
+    background: #fff;
+    margin: 0 2rem;
+    padding: 1rem 3rem;
+    border-radius: .5rem;
+    box-shadow: 0 .1rem .3rem #333;
+    position: relative;
+    
+}
+.login-form form h3{
+    font-size: 3rem;
+    color: rgb(118, 184, 247);
+}
+.login-form form .box{
+    width: 100%;
+    padding: 1rem 0;
+    margin: 1rem 0;
+    border-bottom: .2rem solid #666;
+    font-size: 1.6rem;
+    text-transform: none;
+}
+.login-form form .box::placeholder{
+    text-transform:capitalize;
+}
+.login-form form .box:focus{
+    border-color: rgb(118, 184, 247);
+}
+.login-form form .box:nth-child(3){
+    margin-bottom: 3rem;
+}
+
+.login-form form p{
+    font-size: 1.4rem;
+    color: #666;
+    padding: .5rem 0;
+    text-transform: capitalize;
+}
+.login-form form p a{
+    color: rgb(118, 184, 247);
+}
+.login-form form .btn{
+    width: 100%;
+    margin: 2rem 0;
+}
+.login-form form h3{
+    text-transform: capitalize;
+}
+
+.login-form form .fa-times{
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    color: #999;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    background: url('img/home3_b.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    text-align: center;
+    
+}
+.home .spin{
+    position: absolute;
+    top: 9rem;
+    right: 1.5rem;
+    animation: spin 5s linear infinite;
+}
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+.home .spin img {
+    height: 50px;
+    width: 50px;
+}
+.home h1{
+    font-size: 5rem;
+    color: #f9f9f9;
+    text-transform: capitalize;
+}
+.home p{
+    font-size: 1.5rem;
+    color: #e6e6e6;
+    padding: 1.3rem 0;
+    width: 70rem;
+
+}
+
+.home .shape{
+    position:absolute;
+    bottom: -2rem;
+    left: 0;
+    height: 10rem;
+    width: 100%;
+    background:url('img/shape.png');
+    block-size: 100rem 15rem;
+    filter: drop-shadow(0 -1.rem .1rem rgba(0,0,0,.2));
+    animation: animate 10s linear infinite;
+}
+
+@keyframes animate {
+    0%{
+        background-position-x: 0rem;
+    }
+    100%{
+        background-position-x: 100rem;
+    }
+}
+
+
+.about{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.about .image{
+    flex: 0 0 60%;
+}
+.about .image img{
+    height: 75vh;
+    width: 100%
+}
+
+.about .content{
+    flex: 0 0 40%;
+}
+.about .content h3{
+    text-transform: capitalize;
+    font-size:3.2rem;
+    color: #666;
+}
+
+.about .content p{
+    font-size: 1.3rem;
+    color: #666;
+    padding: 1rem 0;
+}
+.course{
+    background: #f3f3f3;
+}
+.course .box-container{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+.course .box-container .box{
+    width: 35rem;
+    border: .1rem solid rgba(0,0,0,.1);
+    position: relative;
+    border-radius: 0.5rem;
+    margin: 1.5rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+.course .box-container .box:hover{
+    transform: translate3d(0px, -7px, 0px);
+}
+.course .box-container .box img{
+    height: 20rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    width: 100%;
+    object-fit: cover;
+}
+.course .box-container .box .content{
+    padding: 1rem;
+}
+.course .box-container .box .content .stars i{
+    color: rgb(118, 184, 247);
+    font-size: 1.5rem;
+    padding: 1rem .1rem;
+}
+.course .box-container .box .content .title{
+    color: #333;
+    font-size: 1.7rem;
+    text-transform: capitalize;
+}
+.course .box-container .box .content .title:hover{
+    text-decoration: underline;
+    
+}
+.course .box-container .box .content p{
+    padding: 1rem 0;
+    color: #666;
+    font-size: 1.2rem;
+    
+}
+
+.course .box-container .box .content .info{
+    display: flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top: .5rem;
+    border-top: .1rem solid rgba(0,0,0,.3);
+}
+.course .box-container .box .content .info h3{
+    font-size: 1.2rem;
+    padding: 1rem;
+    color: #666;
+}
+.course .box-container .box .content .info h3 i{
+    color: rgb(118, 184, 247);
+    padding-right: .5rem;
+}
+.course .box-container .box .price{
+    position: absolute;
+    top: 16rem;
+    right: 1rem;
+    height: 6rem;
+    width:6rem;
+    line-height: 6rem;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 2rem;
+    color: #fff;
+    background: var(--gradient);
+}
+
+.teacher{
+    text-align: center;
+    background: url('img/teachers.png') no-repeat;
+    background-size: cover;
+    background-position: bottom;
+
+}
+.teacher p{
+    font-size: 1.5rem;
+    color: #666;
+    width: 60rem;
+    margin: 1rem auto;
+}
+.community{
+    background: #f9f9f9;
+    text-align: center;
+}
+.community p{
+    font-size: 2rem;
+    color: #666;
+    margin: 1rem auto;
+}
+.community .box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.community .box-container .box{
+    flex: 1 1 30rem;
+    background: #fff;
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    border: .1rem solid rgba(0,0,0,.1);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    border-radius:.5rem;
+}
+.community .box-container .box .fa-quote-right{
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    font-size: 8rem;
+    color: var(--light_sky);
+    opacity: .3;
+} 
+.community .box-container .box .user img{
+    border-radius: 50%;
+    object-fit: cover;
+    height: 7rem;
+    width: 7rem;
+    margin-top:2rem;
+}
+.community .box-container .box .user h3{
+    color: var(--light_blue);
+    font-size: 2rem;
+}
+
+.community .box-container .box .user .stars i{
+    color:rgb(118, 184, 247);
+    font-size:1.5rem;
+    padding: 1rem 0;
+}
+
+.community .box-container .box  .user .comment{
+    color: #666;
+    font-size: 1.2rem;
+    padding: 1rem;
+}
+
+.contact{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-wrap: wrap;
+    padding-bottom: 4rem;
+}
+
+.contact .image{
+    flex: 1 1 40rem;
+}
+.contact .image img{
+    width: 100%;
+    padding: 2rem;
+}
+.contact form{
+    flex: 1 1 40rem;
+    padding: 2rem 3rem;
+    border: .1rem solid rgba(0,0,0,.1);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    border-radius:.5rem;
+    background: #fff;
+}
+.contact form .heading{
+    text-align: left;
+    padding: 0;
+    padding-bottom: 2rem;
+}
+.contact form .inputBox{
+    position: relative;
+}
+
+
+.contact form .inputBox input,
+.contact form .inputBox textarea{
+    width: 100%;
+    background: none;
+    color: #666;
+    margin: 1.5rem 0;
+    padding: 0.5rem 0;
+    font-size: 1.7rem;
+    border-bottom: .1rem solid rgba(0, 0, 0, 0.1);
+    text-transform: none;
+}
+.contact form .inputBox textarea{
+    resize: none;
+    height: 13rem;
+}
+.contact form .inputBox label{
+    position: absolute;
+    top: 1.7rem;
+    left: 0;
+    font-size: 1.7rem;
+    color: #666;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+.contact form .inputBox input:focus ~ label,
+.contact form .inputBox input:valid ~ label,
+.contact form .inputBox textarea:focus ~ label,
+.contact form .inputBox textarea:valid label~ label{
+    top: -1rem;
+    font-size: 1.5rem;
+    color: var(--light_sky);
+}
+
+.partner{
+    background: #fff;
+}
+.partner .box-container{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 5rem;    
+}
+.partner .box-container .box{
+    flex: 0 0 50%;
+}
+.partner .box-container .box h3{
+    padding: 1.5rem 0;
+    font-size:2rem;
+    color: #666;
+}
+.partner .box-container .box p{
+    padding: 0.5rem 0;
+    font-size:1.5rem;
+    color: #333;
+}
+.partner .box-container .box img{
+    height: 35vh;
+    width: 100%;
+}
+
+
+
+
+.footer{
+    background: rgb(118, 184, 247);
+}
+.footer .box-container{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+.footer .box-container .box{
+    margin: 1.5rem;
+    text-align: center;
+    flex: 1 1 25rem;
+}
+.footer .box-container .box h3{
+    font-size: 2rem;
+    color: #f9f9f9;
+    padding: 1rem 0;
+}
+.footer .box-container .box p{
+    font-size: 1.5rem;
+    color: #f9f9f9;
+    padding: .5rem 0;
+    text-transform: capitalize;
+}
+.footer .box-container .box p i{
+    color: #164083;
+}
+.footer .box-container .box a{
+    font-size: 1.5rem;
+    display: block;
+    padding: .5rem 0;
+    color: #164083;
+}
+.footer .box-container .box a:hover{
+    color: #eee;
+}
+.footer .credit{
+    padding: 2rem 1rem;
+    text-align: center;
+    font-weight: 500;
+    font-size: 2rem;
+    text-transform: capitalize;
+    color: #fff;
+    background:rgba(0, 0, 0, 0.1);
+}
+.footer .credit span{
+    color: #164083;
+}
+@media (max-width: 768px){
+    html{
+        font-size: 60%;
+    }
+    .home p{
+        width: 50rem;
+    }
+    .about{
+        flex-flow: column;
+        text-align: center;
+    }
+    .teacher p{
+        font-size: 1.5rem;
+        width: 40rem;
+    }
+}
